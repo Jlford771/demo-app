@@ -27,6 +27,10 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/modules', function () {
+    return Inertia::render('Modules');
+})->middleware(['auth', 'verified'])->name('modules');
+
 Route::get('/agents/{clientId}', [AgentsController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('agents.index');
